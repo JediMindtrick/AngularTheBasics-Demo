@@ -10,6 +10,7 @@ namespace DemoAngularJS.Controllers
     {
         public ActionResult Index()
         {
+            //comment to make sure
             Response.Redirect("SPA/LOBApp/lob.html", true);
             return View();
         }
