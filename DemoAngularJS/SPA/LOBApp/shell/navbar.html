@@ -1,0 +1,55 @@
+﻿<nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">LOB App</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+            <ul class="nav navbar-nav">                
+                <li><a href="#/order">Orders</a></li>                
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <form class="navbar-form navbar-left" role="login">
+                        <div class="form-group">
+                            <input ng-model="profile.whoami" ng-disabled="profile.loggedIn" type="text" class="form-control" placeholder="IDontKnowWhoIAm">
+                        </div>
+                    </form>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <button style="font-size:24px;" type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-cog" data-toggle="dropdown"><span style="font-size:10px;" class="glyphicon glyphicon-chevron-down"></span></button>
+
+                        <ul ng-controller="ProfileCtrl" class="dropdown-menu" role="menu">
+
+                            <li class="divider"></li>
+                            
+                            <li style="padding-left:20px;">Status: {{(profile.loggedIn ? 'Logged In' : 'Logged Out')}}</li>
+                            <li style="padding-left:20px;">Whoami? {{(profile.loggedIn ? profile.whoami : '??')}}</li>
+                            <li ng-if="profile.loggedIn === true"><a ng-click="logout()">Log Out</a></li>
+                            <li ng-if="profile.loggedIn !== true"><a ng-click="login()">Log In</a></li>
+                            
+                            <li class="divider"></li>
+
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#">Separated link</a></li>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </div>
+                </li>                
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>

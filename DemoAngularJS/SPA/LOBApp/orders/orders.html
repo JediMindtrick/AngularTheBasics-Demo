@@ -1,0 +1,49 @@
+﻿<h3>View is: {{moduleName}}</h3>
+
+<style type="text/css">
+    /*
+    table {
+        border-collapse: separate;
+        border: solid thin black;
+    }
+    */
+
+    table td {
+        border: solid thin black;
+        font-size: 20px;
+    }
+
+    .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+        background-color: #94d4fc;
+    }
+</style>
+
+<table class="table table-hover table-striped table-bordered table-condensed">
+    <thead>
+        <tr style="background-color: #fcfba6">
+            <td>Order Number</td>
+            <td>Customer</td>
+            <td>Amount</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>NEW</td>
+            <td><input ng-model="newOrder.Customer" /></td>
+            <td><input ng-model="newOrder.Amount" /></td>
+            <td><button class="btn btn-default" ng-click="resetNew()" ng-disabled="!newIsDirty">Cancel</button></td>
+            <td><button class="btn btn-default" ng-click="saveNew()" ng-disabled="!newIsDirty">Save</button></td>
+        </tr>
+
+
+        <tr ng-repeat="order in orders">
+            <td>{{order.OrderNumber}}</td>
+            <td>{{order.Customer}}</td>
+            <td>{{order.Amount | currency}}</td>
+            <td><a ng-href="#/order/foo">Bad Link</a></td>
+            <td><a ng-href="#/order/{{order.OrderNumber}}">Edit</a></td>
+        </tr>
+    </tbody>
+</table>

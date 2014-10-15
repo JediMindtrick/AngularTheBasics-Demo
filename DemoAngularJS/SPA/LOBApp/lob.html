@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="LOBApp">
+<head>
+    <title></title>
+
+    <link rel="stylesheet" href="/Content/bootstrap.min.css" />
+
+    <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script><!--bootstrap needs jQuery *yuck*-->
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/lodash.min.js"></script>
+
+    <script type="text/javascript" src="/Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-ui-router.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-mocks.js"></script>
+
+    <script type="text/javascript" src="/SPA/LOBApp/shell/profile-service.js"></script>
+    
+    <script type="text/javascript" src="/SPA/LOBApp/lob.js"></script>
+    <!--All of these are tacked-on to the main module-->
+    <script type="text/javascript" src="/SPA/LOBApp/lob-routes.js"></script>
+    <script type="text/javascript" src="/SPA/LOBApp/lob-httpInterceptors.js"></script>
+    <!--These really need to be here only for dev/test/disconnected scenario-->
+    <script type="text/javascript" src="/SPA/LOBApp/mocks/mockDb.js"></script>
+    <script type="text/javascript" src="/SPA/LOBApp/mocks/dbConfig.js"></script>
+    <script type="text/javascript" src="/SPA/LOBApp/mocks/mockHttp.js"></script>
+    
+
+    <script type="text/javascript" src="/SPA/LOBApp/shell/profile-controller.js"></script>    
+    <script type="text/javascript" src="/SPA/LOBApp/orders/orders-controller.js"></script>
+    <script type="text/javascript" src="/SPA/LOBApp/orders/orderDetail/orderDetail-controller.js"></script>
+
+</head>
+<body ng-controller="LOBCtrl">
+
+    <div ng-include="'/SPA/LOBApp/shell/navbar.html'"></div>
+        
+    <div ui-view></div>
+
+</body>
+</html>

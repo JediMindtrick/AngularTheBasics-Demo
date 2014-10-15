@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="DemoApp">
+<head>
+    <title></title>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script type="text/javascript" src="/Scripts/lodash.min.js"></script>
+    <script type="text/javascript" src="/Scripts/angular.min.js"></script>
+    <script type="text/javascript" src="/Scripts/angular-ui-router.js"></script>
+
+    <script type="text/javascript" src="/SPA/TicTacToe/data/data-service.js"></script>
+    <script type="text/javascript" src="/SPA/TicTacToe/identity/identity-service.js"></script>
+    <script type="text/javascript" src="/SPA/TicTacToe/gameMechanics/gameMechanic-service.js"></script>
+    <script type="text/javascript" src="/SPA/TicTacToe/leaderboard/leaderboard-controller.js"></script>
+    <script type="text/javascript" src="/SPA/TicTacToe/playgame/playgame-controller.js"></script>
+</head>
+<body ng-controller="MainCtrl">
+    <h1>Main Controller is "{{moduleName}}"</h1>
+    <h1>I am: <input ng-model="profile.whoami" ng-disabled="profile.loggedIn" /> <button ng-disabled="profile.loggedIn" ng-click="login()">Log In</button> </h1>
+    <h1>My status: {{(profile.loggedIn ? 'Logged In' : 'Logged Out')}}</h1>
+    <button ng-disabled="profile.loggedIn !== true" ng-click="logout()">Log Out</button>
+
+    <div ui-view></div>
+
+    <script type="text/javascript">
+        angular.module('DemoApp', ['ui.router','Leaderboard', 'Playgame', 'Data', 'Identity'])
+
+        .controller('MainCtrl', ['$scope', 'identity', function ($scope, identity) {
+            $scope.moduleName = 'MainCtrl';
+            $scope.profile = identity.getProfile();
+            $scope.logout = function () {
+                identity.logout($scope.profile.whoami);
+            };
+            $scope.login = function () {
+                identity.register($scope.profile.whoami);
+            };
+            
+        }])
+
+        .controller('HomeCtrl', ['$scope', '$http', function ($scope, $http) {
+            $scope.moduleName = 'HomeCtrl';
+        }])
+
+        .config(function ($stateProvider) {
+            $stateProvider
+                .state('default', {
+                    url: '',
+                    templateUrl: '/SPA/TicTacToe/home/home.html',
+                    controller: 'HomeCtrl'
+                })
+
+                .state('home', {
+                    url: '/home',
+                    templateUrl: '/SPA/TicTacToe/home/home.html',
+                    controller: 'HomeCtrl'
+                })
+
+                .state('leaderboard', {
+                    url: '/leaderboard',
+                    templateUrl: '/SPA/TicTacToe/leaderboard/leaderboard.html',
+                    controller: 'LeaderboardCtrl'
+                })
+
+                .state('playgame', {
+                    url: '/playgame',
+                    templateUrl: '/SPA/TicTacToe/playgame/playgame.html',
+                    controller: 'PlaygameCtrl'
+                });
+
+        })
+
+        ;
+
+    </script>
+
+</body>
+</html>

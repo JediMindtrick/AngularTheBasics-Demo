@@ -1,0 +1,13 @@
+﻿<h3>Editing an order</h3>
+
+<form name="orderDetail">
+
+    <label>Order Number: <input ng-disabled="true" ng-model="order.OrderNumber" /></label> <br />
+
+    <label>Customer: <input ng-disabled="true" ng-model="order.Customer" /></label><br />
+
+    <label>Amount: <input ng-model="order.Amount" /></label>
+
+    <button ng-disabled="!orderDetail.$dirty" ng-click="save(order)">Save</button>
+
+</form>
