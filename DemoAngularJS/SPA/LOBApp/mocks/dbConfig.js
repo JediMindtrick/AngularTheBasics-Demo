@@ -20,6 +20,12 @@
                 OrderNumber: 2,
                 Customer: 'Davey Jones',
                 Amount: 2000
+            },
+            {
+                id: 3,
+                OrderNumber: 3,
+                Customer: 'Fred Flintstone',
+                Amount: 3000
             }
         ]
     });

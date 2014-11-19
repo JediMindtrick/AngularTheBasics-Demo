@@ -2,7 +2,7 @@
 
 .service('data',['$q','$log', function ($q, $log) {
 
-    var myFirebaseRef = new Firebase("https://tic-tac-toe-52.firebaseio.com/");
+    var myFirebaseRef = new Firebase("https://tic-tac-toe-53.firebaseio.com/");
     var _usersRef = myFirebaseRef.child('users');
     var _gamesRef = myFirebaseRef.child('games');
     
