@@ -14,14 +14,14 @@
     <script type="text/javascript" src="/Scripts/angular-ui-router.js"></script>
     <script type="text/javascript" src="/Scripts/angular-mocks.js"></script>
 
-    <script type="text/javascript" src="/SPA/LOBApp/shell/profile-service.js"></script>
-    
-    <script type="text/javascript" src="/SPA/LOBApp/lob.js"></script>
+
+    <script type="text/javascript" src="/SPA/LOBApp/lob.js"></script>    
     <!--All of these are tacked-on to the main module-->
     <script type="text/javascript" src="/SPA/LOBApp/lob-routes.js"></script>
     <script type="text/javascript" src="/SPA/LOBApp/lob-httpInterceptors.js"></script>
+
     <!--These really need to be here only for dev/test/disconnected scenario-->
-    <script type="text/javascript" src="/SPA/LOBApp/mocks/mockDb.js"></script>
+    <script type="text/javascript" src="/SPA/LOBApp/mocks/mockDb.js"></script>    
     <script type="text/javascript" src="/SPA/LOBApp/mocks/dbConfig.js"></script>
     <script type="text/javascript" src="/SPA/LOBApp/mocks/mockHttp.js"></script>
     
@@ -30,7 +30,12 @@
     <script type="text/javascript" src="/SPA/LOBApp/orders/orders-controller.js"></script>
     <script type="text/javascript" src="/SPA/LOBApp/orders/orderDetail/orderDetail-controller.js"></script>
 
+    <script type="text/javascript" src="/SPA/LOBApp/shell/profile-service.js"></script>
+    <script type="text/javascript" src="/SPA/LOBApp/dependency0/dependency0-service.js"></script>
+
+
 </head>
+
 <body ng-controller="LOBCtrl">
 
     <div ng-include="'/SPA/LOBApp/shell/navbar.html'"></div>
@@ -38,4 +43,5 @@
     <div ui-view></div>
 
 </body>
+
 </html>

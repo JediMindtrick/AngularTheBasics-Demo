@@ -1,9 +1,8 @@
-﻿angular.module('Profile', ['Dependency0'])
+angular.module('Dependency0', [])
 
-.service('identity', ['$q', '$log', 'dependency0', function ($q, $log, dep0) {
+.service('dependency0', ['$q', '$log', function ($q, $log) {
 
-    $log.log(dep0.foo);
-
+/*
     var profile = {
         whoami: '',
         loggedIn: false
@@ -29,5 +28,10 @@
         getProfile: function () {
             return profile;
         }
+    };
+    */
+
+    return {
+        foo: 'bar'
     };
 }]);

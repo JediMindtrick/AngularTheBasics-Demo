@@ -1,4 +1,11 @@
-﻿angular.module('LOBApp', ['ui.router', 'ngMockE2E', 'InMemoryDb', 'Orders', 'OrderDetail', 'NavbarProfile', 'Profile'])
+﻿angular.module('LOBApp', [
+	'ui.router', 
+	'ngMockE2E', 
+	'InMemoryDb', 
+	'Orders', 
+	'OrderDetail', 
+	'NavbarProfile', 
+	'Profile'])
 
 .controller('LOBCtrl', ['$scope','identity', function ($scope,identity) {
     $scope.moduleName = 'LOBCtrl';
